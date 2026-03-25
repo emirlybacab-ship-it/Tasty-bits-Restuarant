@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasty Bites Restaurant</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1,h2,h3 {
+    margin: 0 0 10px 0;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    background-color: #ff6600;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: white;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #ffa366;
+}
+
+/* Section Styles */
+section {
+    padding: 60px 20px;
+}
+
+/* Home Section */
+#home {
+    background: linear-gradient(90deg, #ffb347, #ffcc33);
+    text-align: center;
+    color: rgb(163, 17, 17);
+    position: relative;
+}
+
+#home img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 20px 0;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+
+#home h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 48px;
+}
+
+#home h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#home p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+/* Home Boxes */
+.home-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.box h2 {
+    color: #ff6600;
+    text-align: center;
+}
+
+/* About Us Section */
+#about {
+    background-color: #cfe2f3;
+    text-align: center;
+}
+
+#about p.story {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 16px;
+}
+
+/* Core Values */
+.values {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.value-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 200px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.value-box:hover {
+    transform: translateY(-5px);
+}
+
+.value-box .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Person Boxes */
+#about .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.person-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.person-box:hover {
+    transform: scale(1.05);
+}
+
+.person-box .icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+/* Menu Section */
+#menu {
+    background-color: #ffd966;
+    text-align: center;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.menu-item {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-item-details {
+    padding: 15px;
+}
+
+.item-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.item-price {
+    color: #555;
+}
+
+.item-description {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Contact Info Section */
+#contact {
+    background-color: #e6b3ff;
+    text-align: center;
+}
+
+#contact .container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.contact-box {
+    background-color: white;
+    padding: 20px;
+    width: 220px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.contact-box:hover {
+    transform: translateY(-5px);
+}
+
+.contact-box .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.contact-box a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Contact Form Section */
+#contact-form {
+    background-color: #b6f328;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#contact-form form {
+    background-color: white;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+#contact-form input, #contact-form textarea, #contact-form select, #contact-form button {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#contact-form button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #ffa366;
+}
+
+/* Location Section */
+#location {
+    background-color: #cfe2f3;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#location iframe {
+    width: 80%;
+    height: 400px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #ff6600;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation (Only One on Top) -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact Info</a>
+    <a href="#contact-form">Contact Form</a>
+    <a href="#location">Location</a>
+</nav>
+
+<!-- Home Section -->
+<section id="home">
+    <img src="https://www.logoai.com/uploads/output/2024/08/11/4e49fc0c93853a67038c697eaefa254d.jpg" alt="Logo">
+    <h1>TASTY BITES RESTAURANT</h1>
+    <h2>Delicious meals, warm smiles, unforgettable moments!</h2>
+    <p>Welcome to Tasty Bites Restaurant! Enjoy fresh, delicious meals in a friendly environment. We aim to make every visit a memorable experience.</p>
+    <div class="home-boxes">
+        <div class="box">
+            <h2>MISSION</h2>
+            <p>Make good food and great serving part of every visit.</p>
+        </div>
+        <div class="box">
+            <h2>VISION</h2>
+            <p>Our restaurant treats food, service, and love so that our visitors keep coming back.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about">
+    <h1>ABOUT US</h1>
+    <p class="story">Tasty Bites Restaurant started with the goal of bringing fresh, delicious meals and a warm, welcoming atmosphere to Corozal Town. We focus on quality ingredients, great service, and creating memories for our guests.</p>
+    <div class="values">
+        <div class="value-box"><div class="icon">🥗</div><h3>Fresh Ingredients</h3></div>
+        <div class="value-box"><div class="icon">😊</div><h3>Friendly Service</h3></div>
+        <div class="value-box"><div class="icon">💰</div><h3>Affordable Prices</h3></div>
+    </div>
+    <div class="container">
+        <div class="person-box"><div class="icon">👤</div><h3>Emily Bacab</h3><p>Manager</p></div>
+        <div class="person-box"><div class="icon">👤</div><h3>Yanci Chan</h3><p>Cook</p></div>
+        <div class="person-box"><div class="icon">👤</div><h3>Zinia Novelo</h3><p>Server</p></div>
+        <div class="person-box"><div class="icon">👤</div><h3>Luis Coyoc</h3><p>Cashier</p></div>
+    </div>
+</section>
+
+<!-- Menu Section -->
+<section id="menu">
+    <h1>MENU</h1>
+    <div class="menu">
+        <!-- Burger -->
+        <div class="menu-item">
+            <img src="https://people.com/thmb/mOAXmBwXxCmldFCYmROyZaPTBMQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(2024x0:2026x2)/Burger-King-Lawsuit-Alleges-That-Its-Burgers-Are-Too-Small-FT-BLOG0823-bdcfb08072594e1f8f3beff189a432f5.jpg" alt="Burger">
+            <div class="menu-item-details">
+                <div class="item-name">Burger</div>
+                <div class="item-price">$7.00 BZ</div>
+                <div class="item-description">Juicy beef patty with fresh lettuce, tomato, and cheese.</div>
+            </div>
+        </div>
+        <!-- 3 Leches Cake -->
+        <div class="menu-item">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.dVgiT41Fc83zoVZ8e6vscwHaLH?rs=1&pid=ImgDetMain&o=7&rm=3" alt="3 Leches Cake">
+            <div class="menu-item-details">
+                <div class="item-name">3 Leches Cake</div>
+                <div class="item-price">$12.00 BZ</div>
+                <div class="item-description">Soft, moist cake soaked in three types of milk for a sweet delight.</div>
+            </div>
+        </div>
+        <!-- Mexican Tacos -->
+        <div class="menu-item">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.pelK9k5ccm6GNDcM6fEozQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mexican Tacos">
+            <div class="menu-item-details">
+                <div class="item-name">Mexican Tacos</div>
+                <div class="item-price">$16.00 BZ</div>
+                <div class="item-description">Spicy beef or chicken tacos topped with fresh salsa and cheese.</div>
+            </div>
+        </div>
+        <!-- Flan -->
+        <div class="menu-item">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.KG_KKpNqW-KDX74NpYSOmgHaD4?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Flan">
+            <div class="menu-item-details">
+                <div class="item-name">Flan</div>
+                <div class="item-price">$15.25 BZ</div>
+                <div class="item-description">Rich, creamy caramel flan dessert to satisfy your sweet cravings.</div>
+            </div>
+        </div>
+        <!-- Pancake -->
+        <div class="menu-item">
+            <img src="https://www.inspiredtaste.net/wp-content/uploads/2016/07/Pancake-Recipe-1-1200.jpg" alt="Pancake">
+            <div class="menu-item-details">
+                <div class="item-name">Pancake</div>
+                <div class="item-price">$3.25 BZ</div>
+                <div class="item-description">Fluffy pancakes perfect for breakfast with syrup and butter.</div>
+            </div>
+        </div>
+        <!-- Smoothie -->
+        <div class="menu-item">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.g_e9oa4nsKqjZxNNFc6UuwAAAA?pid=ImgDet&w=474&h=710&rs=1&o=7&rm=3" alt="Smoothie">
+            <div class="menu-item-details">
+                <div class="item-name">Smoothie</div>
+                <div class="item-price">$5.00 BZ</div>
+                <div class="item-description">Refreshing fruit smoothie to cool you down any time of day.</div>
+            </div>
+        </div>
+        <!-- Egg and Bread -->
+        <div class="menu-item">
+            <img src="https://th.bing.com/th/id/OIP.4_2BV9RKLDLJjPyn0GveYgHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Egg and Bread">
+            <div class="menu-item-details">
+                <div class="item-name">Egg and Bread</div>
+                <div class="item-price">$9.00 BZ</div>
+                <div class="item-description">Classic breakfast of eggs and fresh bread, simple and tasty.</div>
+            </div>
+        </div>
+        <!-- Wine -->
+        <div class="menu-item">
+            <img src="https://www.goodwoodmuseum.org/wp-content/uploads/2022/02/wine.jpeg" alt="Wine">
+            <div class="menu-item-details">
+                <div class="item-name">Wine</div>
+                <div class="item-price">$9.50 BZ</div>
+                <div class="item-description">Select wines perfect for pairing with your meal.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h1>CONTACT US</h1>
+    <div class="container">
+        <div class="contact-box">
+            <div class="icon">📷</div>
+            <p><a href="https://www.instagram.com/tastybitesrestaurant06" target="_blank">@tastybitesrestaurant06</a></p>
+        </div>
+        <div class="contact-box">
+            <div class="icon">✉️</div>
+            <p><a href="mailto:tastybitesrestaurant@gmail.com">tastybitesrestaurant@gmail.com</a></p>
+        </div>
+        <div class="contact-box">
+            <div class="icon">📞</div>
+            <p><a href="tel:+5016010011">601-0011</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section id="contact-form">
+    <h1>CONTACT FORM</h1>
+    <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <select>
+            <option>Order Inquiry</option>
+            <option>Feedback</option>
+            <option>Reservation</option>
+        </select>
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<!-- Location Section -->
+<section id="location">
+    <h1>LOCATION</h1>
+    <iframe src="https://www.google.com/maps?q=Corozal+Town+Belize&output=embed"></iframe>
+    <p><strong>Address:</strong> 19 Avenue, Corozal Town</p>
+    <p><strong>Opening hours:</strong> 7am to 12 pm</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2026 Tasty Bites Restaurant. All Rights

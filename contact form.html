@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Contact Form</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: #57da07; /* green background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .page {
+        width: 500px;
+        height: 320px;
+        position: relative;
+        background: #62f009;
+    }
+
+    /* Vertical title on the left */
+    .title {
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        transform: rotate(-90deg) translateY(-50%);
+        transform-origin: left top;
+        font-size: 28px;
+        font-weight: bold;
+        color: #1f3f1f;
+    }
+
+    /* Pink center card */
+    .card {
+        background: #f4a3c3;
+        width: 320px;
+        height: 260px;
+        margin: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Left info section */
+    .info {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .info div {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    /* Right form labels */
+    .form {
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .send {
+        border: 2px solid black;
+        padding: 4px 10px;
+        width: fit-content;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="page">
+    <div class="title">Contact Form</div>
+
+    <div class="card">
+        <!-- Left side icons and info -->
+        <div class="info">
+            <div>✉️tastybitesrestaurant@gmail.com</div>
+            <div>📞 601-0011</div>
+            <div>📍 Corozal Town</div>
+            <div>⏰ 7am to 1pm</div>
+            <div>🚌 Monday to Saturday</div>
+        </div>
+
+        <!-- Right side labels -->
+        <div class="form">
+            <div>Name:</div>
+            <div>Email:</div>
+            <div>Message:</div>
+            <div class="send">Send</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

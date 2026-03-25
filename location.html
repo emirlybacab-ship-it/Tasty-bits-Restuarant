@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Location Page</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: #63ec0d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .page {
+        width: 700px;
+        height: 420px;
+        position: relative;
+        background: #7bc94b;
+        box-sizing: border-box;
+    }
+
+    /* LOCATION title */
+    .title {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    /* Map shape */
+    .map {
+        position: absolute;
+        left: 40px;
+        top: 70px;
+        width: 350px;
+        height: 260px;
+        border: 2px solid black;
+        border-radius: 40px;
+    }
+
+    /* River path */
+    .river {
+        position: absolute;
+        left: 60px;
+        top: 120px;
+        width: 260px;
+        height: 120px;
+        border-top: 3px solid #2a8f8f;
+        border-left: 3px solid #2a8f8f;
+        border-bottom: 3px solid #2a8f8f;
+        border-radius: 80px;
+        transform: rotate(-10deg);
+    }
+
+    /* Pins */
+    .pin {
+        width: 16px;
+        height: 16px;
+        border: 2px solid black;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        position: absolute;
+    }
+
+    .pin.left {
+        left: 70px;
+        bottom: 60px;
+    }
+
+    .pin.right {
+        right: 90px;
+        top: 110px;
+    }
+
+    /* Right info text */
+    .info {
+        position: absolute;
+        right: 40px;
+        top: 130px;
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    /* Next button */
+    .next {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        border: 2px solid black;
+        padding: 5px 5px;
+        font-size: 11px;
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+    <div class="title">LOCATION</div>
+
+    <div class="map"></div>
+    <div class="river"></div>
+
+    <div class="pin left"></div>
+    <div class="pin right"></div>
+
+    <div class="info">
+        <div>Address:</div>
+        <div>19 Avenue, Corozal Town</div>
+        <br>
+        <div>Opening hours</div>
+        <div>7am to 12 pm</div>
+    </div>
+
+    <div class="next">Next</div>
+
+</div>
+
+</body>
+</html>
